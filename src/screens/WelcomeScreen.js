@@ -14,10 +14,10 @@ function WelcomeScreen({navigation}) {
     <SafeAreaView style={{backgroundColor: '#fff'}}>
       <View style={styles.container}>
         <View style={{marginTop: 400}}>
-          <Text style={styles.tagline}>Arktastic Delivery</Text>
+          <Text style={styles.tagline}>Discuss Fort</Text>
           <Text style={styles.text}>
-            We just not deliver products, we make customers love &amp; trust
-            through our shipping.
+            Join the journey of Secure Chat &amp; Project Management in all in
+            one Application.
           </Text>
           <View style={styles.buttonsContainer}>
             <View>
@@ -26,12 +26,16 @@ function WelcomeScreen({navigation}) {
                 title="Login to your account"
               />
             </View>
+            <AppButton
+              color="secondary"
+              onPress={() => navigation.navigate('Register')}
+              title="Register"
+            />
           </View>
         </View>
-        <ImageBackground
-          style={styles.background}
-          source={require('../assets/welcome.jpg')}
-        />
+        <View style={styles.background}>
+          <View style={styles.background2}></View>
+        </View>
       </View>
     </SafeAreaView>
   );
@@ -46,19 +50,12 @@ const styles = StyleSheet.create({
     paddingHorizontal: 28,
   },
 
-  background: {
-    flex: 1,
-    height: 320,
-    width: '100%',
-    position: 'absolute',
-    top: 20,
-    left: 20,
-  },
   buttonsContainer: {
     width: '100%',
     // flexDirection: 'row',
     marginTop: 10,
   },
+
   logo: {
     width: 120,
     height: 120,
@@ -69,16 +66,18 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   tagline: {
-    fontSize: 22,
+    fontSize: 20,
     fontWeight: '700',
+    textTransform: 'uppercase',
     paddingVertical: 5,
-    letterSpacing: 1.4,
+    letterSpacing: 4,
+    fontWeight: '800',
     marginBottom: 8,
     textAlign: 'center',
     color: colors.black,
   },
   text: {
-    color: '#888',
+    color: '$555',
     lineHeight: 24,
     textAlign: 'center',
     fontSize: 16,

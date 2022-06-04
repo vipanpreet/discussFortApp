@@ -7,7 +7,7 @@ import {Form, FormField, SubmitButton, ErrorMessage} from '../components/Form';
 import Loader from '../components/Layout/Loader/Loader';
 import {login} from '../redux/user/userActions';
 
-const LoginScreen = ({navigation}) => {
+const RegisterScreen = ({navigation}) => {
   const dispatch = useDispatch();
 
   const auth = useSelector(state => state.auth);
@@ -16,6 +16,8 @@ const LoginScreen = ({navigation}) => {
   const validationSchema = Yup.object().shape({
     email: Yup.string().required().email().label('Email'),
     password: Yup.string().required().min(4).label('Password'),
+    firstName: Yup.string().required().min(2).label('firstName'),
+    lastName: Yup.string().required().min(2).label('lastName'),
   });
 
   const handleSubmit = values => {
@@ -29,12 +31,34 @@ const LoginScreen = ({navigation}) => {
       ) : (
         <View>
           <Form
-            initialValues={{email: '', password: ''}}
+            initialValues={{
+              email: '',
+              password: '',
+              firstName: '',
+              lastName: '',
+              phoneNumber: '',
+            }}
             onSubmit={handleSubmit}
             validationSchema={validationSchema}>
             <ErrorMessage
-              error="Invalid email / Password."
+              error="Email Address Already Exists"
               visible={errorLogin}
+            />
+            <FormField
+              autoCapitalize="none"
+              autoCorrect={false}
+              keyboardType="default"
+              name="firstName"
+              placeholder="First Name"
+              textContentType="name"
+            />
+            <FormField
+              autoCapitalize="none"
+              autoCorrect={false}
+              keyboardType="default"
+              name="lastName"
+              placeholder="last Name"
+              textContentType="familyName"
             />
             <FormField
               autoCapitalize="none"
@@ -44,6 +68,7 @@ const LoginScreen = ({navigation}) => {
               placeholder="Email"
               textContentType="emailAddress"
             />
+
             <FormField
               autoCapitalize="none"
               autoCorrect={false}
@@ -52,7 +77,7 @@ const LoginScreen = ({navigation}) => {
               secureTextEntry
               textContentType="password"
             />
-            <SubmitButton title="Login" />
+            <SubmitButton title="Register" />
           </Form>
         </View>
       )}
@@ -76,4 +101,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default LoginScreen;
+export default RegisterScreen;

@@ -2,10 +2,11 @@ import React from 'react';
 import {Button, StyleSheet, Text, View} from 'react-native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
-import Icon from 'react-native-vector-icons/AntDesign';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 import ProfileNavigator from './ProfileNavigator';
-import FeedNavigator from './FeedNavigator';
+import TasksNavigator from './TasksNavigator';
+import colors from '../config/colors';
 
 const AppNavigator = () => {
   Icon.loadFont();
@@ -14,26 +15,48 @@ const AppNavigator = () => {
   return (
     <Tab.Navigator
       screenOptions={{
-        tabBarActiveTintColor: '#e91e63',
+        tabBarActiveTintColor: colors.primaryDark,
         tabBarStyle: {
           position: 'absolute',
-          left: 20,
-          right: 20,
-          bottom: 25,
+          left: 0,
+          right: 0,
+          bottom: 0,
           elevation: 0,
+          width: '100%',
           backgroundColor: '#ffffff',
-          borderRadius: 15,
-          height: 90,
+          height: 80,
           ...styles.shadow,
         },
       }}>
       <Tab.Screen
-        name="Feed"
-        component={FeedNavigator}
+        name="Tasks"
+        component={TasksNavigator}
         options={{
           headerShown: false,
           tabBarIcon: ({color, size}) => (
-            <Icon name="home" size={size} color={color} />
+            <Icon name="albums" size={size} color={color} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Chat"
+        component={TasksNavigator}
+        options={{
+          headerShown: false,
+          tabBarIcon: ({color, size}) => (
+            <Icon name="chatbubble" size={size} color={color} />
+          ),
+        }}
+      />
+
+      <Tab.Screen
+        name="Calender"
+        component={ProfileNavigator}
+        options={{
+          tabBarLabel: 'Calender',
+          headerShown: false,
+          tabBarIcon: ({color, size}) => (
+            <Icon name="calendar" size={size} color={color} />
           ),
         }}
       />
@@ -45,7 +68,7 @@ const AppNavigator = () => {
           tabBarLabel: 'Profile',
           headerShown: false,
           tabBarIcon: ({color, size}) => (
-            <Icon name="profile" size={size} color={color} />
+            <Icon name="options" size={size} color={color} />
           ),
         }}
       />

@@ -9,13 +9,14 @@ import {
   Dimensions,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
-// import BarcodeScanner from 'react-native-scan-barcode';
-// import RenderTrackings from '../components/HomeComponents/RenderTrackings';
-const RenderTrackings = React.lazy(() =>
-  import('../components/HomeComponents/RenderTrackings'),
-);
+import RenderProjects from '../components/HomeComponents/RenderProjects';
+import AppText from '../components/Text';
 import colors from '../config/colors';
-import Button from '../components/Button';
+// import BarcodeScanner from 'react-native-scan-barcode';
+// import RenderTasks from '../components/HomeComponents/RenderTasks';
+const RenderTasks = React.lazy(() =>
+  import('../components/HomeComponents/RenderTasks'),
+);
 
 const HomeScreen = ({navigation}) => {
   Icon.loadFont();
@@ -24,9 +25,20 @@ const HomeScreen = ({navigation}) => {
     <Suspense fallback={<Text>Loading...</Text>}>
       <SafeAreaView>
         <View style={styles.container}>
-          <Text style={styles.title}>Track Parcel</Text>
+          <AppText style={styles.myTasks}>My Tasks</AppText>
+          <AppText style={styles.myTasksCount}>
+            You Have 2 Tasks for{' '}
+            <AppText style={styles.underline}>Today</AppText>
+          </AppText>
+          <View style={styles.subContainer}>
+            {/* PROJECTS */}
+            {/* <AppText style={styles.title}>Projects</AppText> */}
+            <RenderProjects navigation={navigation} />
 
-          <RenderTrackings navigation={navigation} />
+            {/* TASKS */}
+            <AppText style={styles.title}>Tasks</AppText>
+            <RenderTasks navigation={navigation} />
+          </View>
         </View>
       </SafeAreaView>
     </Suspense>
@@ -37,79 +49,38 @@ export default HomeScreen;
 const styles = StyleSheet.create({
   container: {
     paddingHorizontal: 12,
-    paddingVertical: 10,
     height: '100%',
     backgroundColor: '#f5f5f5',
   },
-  search: {
-    backgroundColor: '#fff',
-    paddingVertical: 12,
-    paddingHorizontal: 8,
-    borderRadius: 5,
-    marginBottom: 10,
-    flex: 1,
-    marginRight: 10,
+  subContainer: {
+    paddingVertical: 20,
   },
-  select: {
-    backgroundColor: '#fff',
-    borderRadius: 8,
-    borderColor: '#eee',
-    borderWidth: 1,
-    paddingVertical: 8,
-    paddingHorizontal: 10,
-    marginRight: 5,
+  myTasks: {
+    fontSize: 28,
+    fontWeight: '800',
+    color: colors.dark,
+    marginTop: 20,
+    marginLeft: 10,
   },
-  relative: {
-    position: 'relative',
-  },
-  selectText: {
-    fontSize: 12,
-    fontWeight: '600',
-    textTransform: 'uppercase',
-    textAlign: 'center',
-  },
-  flexRow: {
+  justifyBetween: {
     flexDirection: 'row',
-    marginTop: 10,
-  },
-  title: {
-    fontSize: 18,
-    fontWeight: '600',
-    lineHeight: 26,
-    color: colors.black,
-  },
-  text: {
-    fontSize: 12,
-    color: '#555',
-    lineHeight: 20,
-    fontWeight: '400',
-  },
-  qrBtn: {
-    backgroundColor: colors.orange,
-    width: 38,
-    height: 38,
-    borderRadius: 6,
-    justifyContent: 'center',
+    justifyContent: 'space-between',
     alignItems: 'center',
   },
-  zeroContainer: {
-    height: 0,
-    flex: 0,
+  myTasksCount: {
+    fontSize: 16,
+    fontWeight: '600',
+    marginLeft: 10,
+    marginTop: 6,
   },
-  cameraContainer: {
-    height: Dimensions.get('window').height,
-    zIndex: 50,
+  underline: {
+    textDecorationLine: 'underline',
   },
-  cameraMenu: {
-    backgroundColor: '#fff',
-    flexDirection: 'row',
-    position: 'absolute',
-    zIndex: 60,
-    right: 0,
-    paddingHorizontal: 20,
-    paddingVertical: 10,
-  },
-  menuItem: {
-    marginHorizontal: 10,
+  title: {
+    fontSize: 20,
+    paddingTop: 20,
+    paddingBottom: 10,
+    fontWeight: '600',
+    paddingLeft: 10,
   },
 });

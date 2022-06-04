@@ -7,14 +7,12 @@ import TrackingEditScreen from '../screens/TrackingEditScreen';
 
 const Stack = createNativeStackNavigator();
 
-const FeedNavigator = () => {
+const TasksNavigator = () => {
   return (
-    <Stack.Navigator initialRouteName="Home">
-      <Stack.Screen
-        name="Home"
-        component={Home}
-        options={{title: 'Shipments'}}
-      />
+    <Stack.Navigator
+      initialRouteName="Home"
+      screenOptions={{headerShown: false}}>
+      <Stack.Screen name="Home" component={Home} options={{title: 'Tasks'}} />
       <Stack.Screen
         name="Tracking"
         component={TrackingScreen}
@@ -29,4 +27,4 @@ const FeedNavigator = () => {
   );
 };
 
-export default FeedNavigator;
+export default TasksNavigator;

@@ -38,6 +38,6 @@ const Main = () => {
     !userInfo && dispatch(getCreds());
   }, []);
 
-  return <>{userInfo ? <AppNavigator /> : <AuthNavigator />}</>;
+  return <>{!userInfo ? <AppNavigator /> : <AuthNavigator />}</>;
 };
 export default App;
