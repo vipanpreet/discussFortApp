@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {FlatList, TouchableHighlight, View} from 'react-native';
+import {FlatList, TouchableHighlight, View, StyleSheet} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
 import {getTrackingsAction} from '../../redux/tracking/trackingActions';
 import TaskCard from '../Reusables/TaskCard';
@@ -15,7 +15,7 @@ const RenderTasks = ({navigation}) => {
       isCompleted: false,
       status: 'IN PROGRESS',
       priority: 'HIGH',
-      completedPercentage: '40',
+      itemsCompleted: 0,
       startDate: new Date(),
       endingDate: new Date(),
       assignedTo: [
@@ -32,7 +32,7 @@ const RenderTasks = ({navigation}) => {
       ],
       project: {
         _id: 13,
-        name: 'Dashboard UI FIX',
+        name: 'Merchant Dashboard',
       },
 
       description:
@@ -59,7 +59,7 @@ const RenderTasks = ({navigation}) => {
       isCompleted: false,
       status: 'COMPLETED',
       priority: 'MEDIUM',
-      completedPercentage: '80',
+      itemsCompleted: 2,
       startDate: new Date(),
       endingDate: new Date(),
       assignedTo: [
@@ -123,18 +123,22 @@ const RenderTasks = ({navigation}) => {
     </TouchableHighlight>
   );
   return (
-    <View>
-      <View style={{height: 480}}>
-        <FlatList
-          data={tasks}
-          renderItem={renderItem}
-          keyExtractor={task => task._id}
-          onRefresh={onRefresh}
-          refreshing={false}
-        />
-      </View>
+    <View style={styles.container}>
+      <FlatList
+        data={tasks}
+        renderItem={renderItem}
+        keyExtractor={task => task._id}
+        onRefresh={onRefresh}
+        refreshing={false}
+      />
     </View>
   );
 };
 
 export default RenderTasks;
+const styles = StyleSheet.create({
+  container: {
+    height: 480,
+    paddingHorizontal: 12,
+  },
+});

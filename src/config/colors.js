@@ -2,10 +2,11 @@ export default {
   primaryLight: '#6c4dfe',
   primary: '#894dfe',
   primaryDark: '#6D3DCB',
+  teninary: '#FD5D5D',
   greenLight: '#3bd482',
   green: '#1EAE98',
   greenDark: '#068a3f',
-  secondary: '#00ADB5',
+  secondary: '#0AA1DD',
   orange: '#f57242',
   black: '#000',
   white: '#fff',
@@ -13,4 +14,5 @@ export default {
   light: '#eeeaf8',
   dark: '#191b3b',
   danger: '#ff5252',
+  gray: '#505050',
 };

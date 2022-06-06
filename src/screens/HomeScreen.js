@@ -1,17 +1,10 @@
 import React, {Suspense} from 'react';
-import {
-  StyleSheet,
-  View,
-  SafeAreaView,
-  TextInput,
-  Text,
-  TouchableOpacity,
-  Dimensions,
-} from 'react-native';
+import {StyleSheet, View, Text} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
-import RenderProjects from '../components/HomeComponents/RenderProjects';
 import AppText from '../components/Text';
 import colors from '../config/colors';
+import MySafeArea from '../components/MySafeArea';
+import {SafeAreaView} from 'react-native-safe-area-context';
 // import BarcodeScanner from 'react-native-scan-barcode';
 // import RenderTasks from '../components/HomeComponents/RenderTasks';
 const RenderTasks = React.lazy(() =>
@@ -23,7 +16,7 @@ const HomeScreen = ({navigation}) => {
 
   return (
     <Suspense fallback={<Text>Loading...</Text>}>
-      <SafeAreaView>
+      <MySafeArea>
         <View style={styles.container}>
           <AppText style={styles.myTasks}>My Tasks</AppText>
           <AppText style={styles.myTasksCount}>
@@ -31,16 +24,12 @@ const HomeScreen = ({navigation}) => {
             <AppText style={styles.underline}>Today</AppText>
           </AppText>
           <View style={styles.subContainer}>
-            {/* PROJECTS */}
-            {/* <AppText style={styles.title}>Projects</AppText> */}
-            <RenderProjects navigation={navigation} />
-
             {/* TASKS */}
             <AppText style={styles.title}>Tasks</AppText>
             <RenderTasks navigation={navigation} />
           </View>
         </View>
-      </SafeAreaView>
+      </MySafeArea>
     </Suspense>
   );
 };
@@ -48,9 +37,7 @@ export default HomeScreen;
 
 const styles = StyleSheet.create({
   container: {
-    paddingHorizontal: 12,
-    height: '100%',
-    backgroundColor: '#f5f5f5',
+    marginHorizontal: 10,
   },
   subContainer: {
     paddingVertical: 20,
