@@ -347,7 +347,7 @@ export default TrackingEditScreen;
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: colors.light,
+    backgroundColor: colors.primaryTint,
   },
   box: {
     width: 300,

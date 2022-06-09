@@ -77,7 +77,6 @@ export default TaskHeader;
 const styles = StyleSheet.create({
   container: {
     paddingVertical: 30,
-    paddingHorizontal: 20,
   },
   justifyBetween: {
     flexDirection: 'row',

@@ -1,8 +1,10 @@
 export default {
+  primaryTint: '#eeeaf8',
   primaryLight: '#6c4dfe',
   primary: '#894dfe',
   primaryDark: '#6D3DCB',
   teninary: '#FD5D5D',
+  greenTint: '#d1ffe4',
   greenLight: '#3bd482',
   green: '#1EAE98',
   greenDark: '#068a3f',

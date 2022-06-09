@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
   },
   list: {
-    backgroundColor: colors.light,
+    backgroundColor: colors.primaryTint,
     paddingVertical: 16,
     paddingHorizontal: 16,
     width: '100%',
