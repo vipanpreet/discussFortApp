@@ -26,7 +26,7 @@ const renderItem = ({item}) => (
     activeOpacity={0.6}
     underlayColor="#DDDDDD"
     onPress={() => onPress(item?._id)}>
-    <View style={[styles.file, importedStyles.ml1]}>
+    <View style={[styles.file, importedStyles.mr1]}>
       <AppText>{item.name}</AppText>
     </View>
   </TouchableHighlight>
@@ -55,6 +55,6 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 25,
     borderRadius: 10,
-    backgroundColor: colors.greenTint,
+    backgroundColor: colors.light,
   },
 });

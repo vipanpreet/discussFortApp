@@ -4,7 +4,8 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import AppText from '../components/Text';
 import colors from '../config/colors';
 import MySafeArea from '../components/MySafeArea';
-import {SafeAreaView} from 'react-native-safe-area-context';
+import s from '../styles';
+import AppButton from '../components/Button';
 // import BarcodeScanner from 'react-native-scan-barcode';
 // import RenderTasks from '../components/HomeComponents/RenderTasks';
 const RenderTasks = React.lazy(() =>
@@ -23,6 +24,14 @@ const HomeScreen = ({navigation}) => {
             You Have 2 Tasks for{' '}
             <AppText style={styles.underline}>Today</AppText>
           </AppText>
+
+          <View style={[s.fullWidth, s.mt2]}>
+            <AppButton
+              onPress={() => navigation.navigate('CreateTask')}
+              color="dark"
+              title="Create Task"
+            />
+          </View>
           <View style={styles.subContainer}>
             {/* TASKS */}
             <AppText style={styles.title}>Tasks</AppText>

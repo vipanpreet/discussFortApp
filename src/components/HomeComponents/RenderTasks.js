@@ -15,6 +15,7 @@ const RenderTasks = ({navigation}) => {
       isCompleted: false,
       status: 'IN PROGRESS',
       priority: 'HIGH',
+      availability: 'public',
       itemsCompleted: 0,
       startDate: new Date(),
       endingDate: new Date(),
@@ -59,6 +60,7 @@ const RenderTasks = ({navigation}) => {
       isCompleted: false,
       status: 'COMPLETED',
       priority: 'MEDIUM',
+      availability: 'public',
       itemsCompleted: 2,
       startDate: new Date(),
       endingDate: new Date(),
@@ -112,7 +114,7 @@ const RenderTasks = ({navigation}) => {
   };
 
   const onPress = id => {
-    navigation.navigate('Tracking', {id});
+    navigation.navigate('Task', {id});
   };
   const renderItem = ({item}) => (
     <TouchableHighlight

@@ -3,12 +3,18 @@ import React from 'react';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import colors from '../../config/colors';
 
-const BackButton = ({onPress}) => {
+const BackButton = ({onPress, color, bgColor}) => {
   Icon.loadFont();
   return (
-    <TouchableOpacity onPress={onPress} style={styles.container}>
+    <TouchableOpacity
+      onPress={onPress}
+      style={[styles.container, {backgroundColor: colors[bgColor || 'white']}]}>
       <View>
-        <Icon size={22} name="arrow-left-thin" />
+        <Icon
+          size={22}
+          name="arrow-left-thin"
+          color={colors[color ?? 'dark']}
+        />
       </View>
     </TouchableOpacity>
   );

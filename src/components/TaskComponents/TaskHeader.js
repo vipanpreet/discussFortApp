@@ -52,7 +52,11 @@ const TaskHeader = ({navigation}) => {
   return (
     <View style={styles.container}>
       <View style={styles.justifyBetween}>
-        <BackButton onPress={() => navigation.navigate('Home')} />
+        <BackButton
+          bgColor="dark"
+          color="white"
+          onPress={() => navigation.navigate('Home')}
+        />
         <View style={styles.row}>
           <View style={styles.users}>
             {task?.assignedTo?.map(user => (

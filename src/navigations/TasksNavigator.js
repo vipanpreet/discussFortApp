@@ -4,6 +4,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Home from '../screens/HomeScreen';
 import TaskScreen from '../screens/TaskScreen';
 import TrackingEditScreen from '../screens/TrackingEditScreen';
+import CreateTaskScreen from '../screens/CreateTaskScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -15,14 +16,15 @@ const TasksNavigator = () => {
       <Stack.Screen name="Home" component={Home} options={{title: 'Tasks'}} />
 
       <Stack.Screen
-        name="Tracking"
+        name="Task"
         component={TaskScreen}
-        options={{title: 'Tracking'}}
+        options={{title: 'Task'}}
       />
+
       <Stack.Screen
-        name="TrackingEdit"
-        component={TrackingEditScreen}
-        options={{title: 'Edit'}}
+        name="CreateTask"
+        component={CreateTaskScreen}
+        options={{title: 'Create'}}
       />
     </Stack.Navigator>
   );

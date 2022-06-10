@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button, StyleSheet, Text, View} from 'react-native';
+import {StyleSheet} from 'react-native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
 import Icon from 'react-native-vector-icons/Ionicons';
@@ -15,16 +15,18 @@ const AppNavigator = () => {
   return (
     <Tab.Navigator
       screenOptions={{
-        tabBarActiveTintColor: colors.primaryDark,
+        tabBarActiveTintColor: colors.white,
+        tabBarShowLabel: false,
         tabBarStyle: {
           position: 'absolute',
-          left: 0,
-          right: 0,
-          bottom: 0,
+          backgroundColor: colors.dark,
+          left: 20,
+          right: 20,
+          paddingTop: 16,
+          bottom: 15,
           elevation: 0,
-          width: '100%',
-          backgroundColor: '#ffffff',
-          height: 80,
+          borderRadius: 18,
+          height: 70,
           ...styles.shadow,
         },
       }}>
@@ -34,7 +36,12 @@ const AppNavigator = () => {
         options={{
           headerShown: false,
           tabBarIcon: ({color, size}) => (
-            <Icon name="albums" size={size} color={color} />
+            <Icon
+              name="reader"
+              size={size}
+              color={color}
+              style={{textAlignVertical: 'center'}}
+            />
           ),
         }}
       />
@@ -44,7 +51,12 @@ const AppNavigator = () => {
         options={{
           headerShown: false,
           tabBarIcon: ({color, size}) => (
-            <Icon name="chatbubble" size={size} color={color} />
+            <Icon
+              name="ios-chatbox"
+              size={size}
+              color={color}
+              style={{textAlignVertical: 'center'}}
+            />
           ),
         }}
       />
@@ -56,7 +68,12 @@ const AppNavigator = () => {
           tabBarLabel: 'Calender',
           headerShown: false,
           tabBarIcon: ({color, size}) => (
-            <Icon name="calendar" size={size} color={color} />
+            <Icon
+              name="calendar-sharp"
+              size={size}
+              color={color}
+              style={{textAlignVertical: 'center'}}
+            />
           ),
         }}
       />
@@ -68,7 +85,12 @@ const AppNavigator = () => {
           tabBarLabel: 'Profile',
           headerShown: false,
           tabBarIcon: ({color, size}) => (
-            <Icon name="options" size={size} color={color} />
+            <Icon
+              name="reorder-four"
+              size={size}
+              color={color}
+              style={{textAlignVertical: 'center'}}
+            />
           ),
         }}
       />
