@@ -43,7 +43,7 @@ const ProfileScreen = () => {
           <Text
             style={{
               backgroundColor: hideCompleted
-                ? colors.green
+                ? colors.primary
                 : colors.primaryDark,
               textAlign: 'center',
               color: '#fff',

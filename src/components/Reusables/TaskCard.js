@@ -43,7 +43,9 @@ const TaskCard = ({task, navigation}) => {
                 </View>
               ))}
             </View>
-            <TouchableOpacity style={styles.invite}>
+            <TouchableOpacity
+              onPress={() => navigation.navigate('InviteListModal')}
+              style={styles.invite}>
               <AppText style={styles.inviteText}>Invite</AppText>
             </TouchableOpacity>
           </View>
@@ -104,14 +106,14 @@ const styles = StyleSheet.create({
     left: 20,
     paddingHorizontal: 16,
     paddingVertical: 6,
-    backgroundColor: colors.primaryTint,
+    backgroundColor: colors.terinaryTint,
     borderRadius: 50,
     width: 'auto',
   },
   projectText: {
     fontWeight: '800',
     fontSize: 12,
-    color: colors.primary,
+    color: colors.terinary,
   },
   mt1: {
     marginTop: 10,
@@ -143,7 +145,7 @@ const styles = StyleSheet.create({
   invite: {
     paddingHorizontal: 12,
     paddingVertical: 8,
-    backgroundColor: colors.secondary,
+    backgroundColor: colors.primary,
     borderRadius: 100,
     marginLeft: 10,
   },

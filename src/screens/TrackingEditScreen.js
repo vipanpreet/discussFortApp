@@ -278,7 +278,7 @@ const TrackingEditScreen = ({route, navigation}) => {
                         <Icon
                           name="circle"
                           size={20}
-                          color={i === 0 ? colors.green : colors.primary}
+                          color={i === 0 ? colors.primary : colors.primary}
                         />
                         <View style={{marginLeft: 10}}>
                           <Text style={styles.text}>

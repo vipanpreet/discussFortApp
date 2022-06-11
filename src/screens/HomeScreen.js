@@ -28,7 +28,7 @@ const HomeScreen = ({navigation}) => {
           <View style={[s.fullWidth, s.mt2]}>
             <AppButton
               onPress={() => navigation.navigate('CreateTask')}
-              color="dark"
+              color="primary"
               title="Create Task"
             />
           </View>
@@ -46,7 +46,7 @@ export default HomeScreen;
 
 const styles = StyleSheet.create({
   container: {
-    marginHorizontal: 10,
+    paddingHorizontal: 20,
   },
   subContainer: {
     paddingVertical: 20,

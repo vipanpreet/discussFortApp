@@ -32,6 +32,7 @@ export default StyleSheet.create({
   my2: {
     marginVertical: 20,
   },
+
   paragraph: {
     color: '#505050',
   },
@@ -44,7 +45,15 @@ export default StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
   },
+  justifyCenter: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
   fullWidth: {
     width: '100%',
+  },
+  halfWidth: {
+    width: '50%',
   },
 });

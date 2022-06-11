@@ -3,8 +3,9 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 import Home from '../screens/HomeScreen';
 import TaskScreen from '../screens/TaskScreen';
-import TrackingEditScreen from '../screens/TrackingEditScreen';
+// import TrackingEditScreen from '../screens/TrackingEditScreen';
 import CreateTaskScreen from '../screens/CreateTaskScreen';
+import InviteListModal from '../modals/InviteListModal';
 
 const Stack = createNativeStackNavigator();
 
@@ -25,6 +26,14 @@ const TasksNavigator = () => {
         name="CreateTask"
         component={CreateTaskScreen}
         options={{title: 'Create'}}
+      />
+
+      <Stack.Screen
+        // screenOptions={{presentation: 'modal'}}
+
+        name="InviteListModal"
+        component={InviteListModal}
+        options={{title: 'Invite', presentation: 'modal'}}
       />
     </Stack.Navigator>
   );

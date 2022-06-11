@@ -141,6 +141,5 @@ export default RenderTasks;
 const styles = StyleSheet.create({
   container: {
     height: 480,
-    paddingHorizontal: 12,
   },
 });

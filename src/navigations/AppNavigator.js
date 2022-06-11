@@ -15,18 +15,18 @@ const AppNavigator = () => {
   return (
     <Tab.Navigator
       screenOptions={{
-        tabBarActiveTintColor: colors.white,
+        tabBarActiveTintColor: colors.primary,
         tabBarShowLabel: false,
         tabBarStyle: {
           position: 'absolute',
-          backgroundColor: colors.dark,
-          left: 20,
-          right: 20,
+          backgroundColor: colors.white,
+          left: 0,
+          right: 0,
           paddingTop: 16,
-          bottom: 15,
+          bottom: 0,
           elevation: 0,
-          borderRadius: 18,
-          height: 70,
+          borderRadius: 24,
+          height: 80,
           ...styles.shadow,
         },
       }}>
@@ -102,14 +102,14 @@ export default AppNavigator;
 
 const styles = StyleSheet.create({
   shadow: {
-    borderTopColor: '#fff',
+    borderTopColor: colors.light,
     shadowColor: '#ddd',
     shadowOffset: {
       width: 0,
-      height: 2,
+      height: -4,
     },
     shadowOpacity: 0.35,
-    shadowRadius: 3.5,
+    shadowRadius: 6,
     elevation: 5,
   },
 });

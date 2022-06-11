@@ -67,7 +67,9 @@ const TaskHeader = ({navigation}) => {
               </View>
             ))}
           </View>
-          <TouchableOpacity style={styles.invite}>
+          <TouchableOpacity
+            onPress={() => navigation.navigate('InviteListModal')}
+            style={styles.invite}>
             <AppText style={styles.inviteText}>Invite</AppText>
           </TouchableOpacity>
         </View>

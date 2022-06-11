@@ -3,12 +3,23 @@ import {StyleSheet, Text, TouchableOpacity} from 'react-native';
 
 import colors from '../config/colors';
 
-function AppButton({title, onPress, text = '#ffffff', color = 'dark', inline}) {
+function AppButton({
+  title,
+  onPress,
+  text = '#ffffff',
+  color = 'dark',
+  inline,
+  rounded,
+}) {
   return (
     <TouchableOpacity
       style={[
         styles.button,
-        {width: inline ? styles.width : 'auto', backgroundColor: colors[color]},
+        {
+          width: inline ? styles.width : 'auto',
+          backgroundColor: colors[color],
+          borderRadius: rounded || 50,
+        },
       ]}
       onPress={onPress}>
       <Text style={[styles.text, {color: text}]}>{title}</Text>
