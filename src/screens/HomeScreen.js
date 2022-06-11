@@ -28,7 +28,7 @@ const HomeScreen = ({navigation}) => {
           <View style={[s.fullWidth, s.mt2]}>
             <AppButton
               onPress={() => navigation.navigate('CreateTask')}
-              color="primary"
+              color="dark"
               title="Create Task"
             />
           </View>

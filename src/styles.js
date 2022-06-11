@@ -1,6 +1,9 @@
 import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
+  relative: {
+    position: 'relative',
+  },
   mt1: {
     marginTop: 10,
   },

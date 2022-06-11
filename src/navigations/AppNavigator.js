@@ -7,6 +7,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import ProfileNavigator from './ProfileNavigator';
 import TasksNavigator from './TasksNavigator';
 import colors from '../config/colors';
+import ChatNavigator from './ChatNavigator';
 
 const AppNavigator = () => {
   Icon.loadFont();
@@ -47,7 +48,7 @@ const AppNavigator = () => {
       />
       <Tab.Screen
         name="Chat"
-        component={TasksNavigator}
+        component={ChatNavigator}
         options={{
           headerShown: false,
           tabBarIcon: ({color, size}) => (
